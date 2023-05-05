@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "./node-modules/ts-standard/eslintrc.json"
+  ],
+  "parserOptions": {
+    "proyect": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/explicit-fuction-return-type": "off",
+    "@typescript-eslint/no-misused-promises": "off"
+  }
+}
