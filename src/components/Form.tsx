@@ -2,6 +2,7 @@
 import { toast } from "sonner";
 import { Input } from "@/components/input";
 import { Button } from "@/components/Button";
+import confetti from "canvas-confetti";
 
 export const Form = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -11,7 +12,7 @@ export const Form = () => {
     const { email, name, message } = Object.fromEntries(formData.entries());
 
     //lamo a la api
-    fetch("api/kv-send-message", {
+    fetch("app/api/postgre-send-message", {
       method: "POST",
       body: JSON.stringify({ email, name, message }),
       headers: {
@@ -20,6 +21,8 @@ export const Form = () => {
     })
       .then(() => {
         toast.success("Mensaje enviado con exito");
+        form.reset();
+        confetti();
       })
       .catch(() => {
         toast.error("Hubo un error al enviar el mensaje");
@@ -28,7 +31,7 @@ export const Form = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className=" max-w-md p-8 space-y-8 border border-black/10"
+      className=" max-w-md p-8 space-y-8 border border-black/10 "
     >
       <Input
         name=" email"
