@@ -21,7 +21,7 @@ export const Input = ({
         {label}
       </label>
       <input
-        className=" border text-sm rounded-lg block w-full p-2.5 bg-white/5 border-gray-600 placeholder-gray-400 text-white text-center"
+        className=" border text-sm rounded-lg block w-full p-2.5 bg-white/5 border-gray-600 placeholder-gray-400 text-black text-center"
         type={type}
         id={id}
         name={name}
